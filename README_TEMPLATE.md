@@ -172,9 +172,6 @@ Cost-Performance-Dashboard/
 
 # 5. Data Workflow
 
-## End-to-End Architecture
-
-```text
 SAP ECC
    ↓
 SAP BW
