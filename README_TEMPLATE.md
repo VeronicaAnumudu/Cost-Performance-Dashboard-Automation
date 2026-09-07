@@ -107,29 +107,31 @@ I redesigned the process as an integrated analytics solution using SAP ECC, SAP 
      If you don't define the fence, reviewers assume you missed things.
 -->
 
-| Dimension | Details |
-|-----------|---------|
-| **In Scope** | [What is included - data sources, time periods, segments] |
-| **Out of Scope** | [What you explicitly excluded - and a brief reason why] |
-| **Time Period** | [Date range of the data or the project itself] |
-| **Granularity** | [Unit of analysis - row-level, daily aggregates, per-user, etc.] |
+## 3. Project Scope & Tools
+
+### Project Scope
+
+| Dimension        | Details                                                                                                                                                                                                                                                                                                                                                      |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **In Scope**     | Cost performance reporting covering Actual, Budget, Forecast, production volumes, shipped volumes, cost per production tonne, cost per shipped tonne, monthly and YTD performance, variances, and prior-year comparisons. Data was sourced from SAP ECC and SAP BW, with Budget and Forecast data uploaded through dedicated local tables in SAP Datasphere. |
+| **Out of Scope** | Transaction processing and changes to the underlying SAP ECC and SAP BW source systems. The project focused on analytics, reporting, and data integration rather than modification of operational source-system processes.                                                                                                                                   |
+| **Time Period**  | Historical Actual data, current-year performance, Budget and Forecast periods, and prior-year data required for comparative analysis.                                                                                                                                                                                                                        |
+| **Granularity**  | Reporting and analysis from organizational-level performance down through **Department → Cost Center → Cost Element**, with monthly and YTD views used to analyze cost and cost-per-tonne performance.                                                                                                                                                       |
 
 ### Tools & Technologies
 
-<!--
-  List only what you actually used on this project.
-  This is not your skills section - it's the project's technical context.
--->
+| Category                             | Tool(s) Used                                                                                       |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------- |
+| **Data Sources**                     | SAP ECC, SAP BW, Excel-based Budget and Forecast data                                              |
+| **Data Platform & Storage**          | SAP Datasphere, Local Tables                                                                       |
+| **Data Integration**                 | SAP BW Remote Tables, Data Flows, Data Pipelines                                                   |
+| **Data Processing & Transformation** | SQL, SAP Datasphere, business rules, calculations, aggregations                                    |
+| **Data Modeling**                    | Financial and operational data integration, analytical models, organizational and cost hierarchies |
+| **Architecture**                     | Inbound Space → Transformation Space → Consumption Space                                           |
+| **Visualization & Analytics**        | SAP Analytics Cloud (SAC)                                                                          |
+| **Validation & Testing**             | Data reconciliation, business validation, User Acceptance Testing (UAT)                            |
 
-| Category | Tool(s) Used |
-|----------|-------------|
-| Data Storage | [e.g., PostgreSQL, CSV files, BigQuery, S3] |
-| Data Processing | [e.g., Python, R, SQL, Excel, dbt] |
-| Analysis | [e.g., pandas, dplyr, custom SQL queries] |
-| Visualization | [e.g., Matplotlib, Tableau, Power BI, Looker] |
-| Version Control | [e.g., Git / GitHub] |
-| Documentation | [e.g., Markdown, Notion] |
-| Other | [Any additional tools] |
+
 
 ---
 
