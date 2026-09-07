@@ -667,13 +667,13 @@ This public portfolio case study intentionally excludes confidential and proprie
 
 The following have not been published:
 
-Company-specific financial figures
-Actual production volumes
-Proprietary data structures
-Internal source-system identifiers
-Production SQL code
-Commercially sensitive information
-Confidential dashboard screenshots
+* Company-specific financial figures
+* Actual production volumes
+* Proprietary data structures
+* Internal source-system identifiers
+* Production SQL code
+* Commercially sensitive information
+* Confidential dashboard screenshots
 
 The portfolio therefore focuses on the business problem, architecture, data engineering approach, analytical methodology, technical implementation, responsibilities, and business value rather than confidential business data.
 
