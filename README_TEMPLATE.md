@@ -136,24 +136,38 @@ I redesigned the process as an integrated analytics solution using SAP ECC, SAP 
 ## 4. Repository Structure
 
 ```
-[project-root]/
+## 4. Repository Structure
+
+```text id="4rt6v7"
+Cost-Performance-Dashboard/
 │
 ├── data/
-│   ├── raw/                  # Original, unmodified source data - never edited
-│   ├── processed/            # Cleaned and transformed data
-│   └── external/             # Reference data, lookup tables, third-party files
-├── queries/                  # SQL files (retain this folder for SQL-heavy projects)
-│   ├── exploratory/          # Ad-hoc or investigative queries
-│   ├── transformations/      # Cleaning and reshaping logic
-│   └── final/                # Production-ready or presentation queries
+│   ├── raw/                  # Sanitized sample source data only
+│   ├── processed/            # Sanitized examples of transformed data
+│   └── external/             # Sample Budget and Forecast upload files
 │
-├── reports/                  # Final outputs: PDFs, slide decks, Word docs
+├── queries/
+│   ├── exploratory/          # Sanitized investigative SQL examples
+│   ├── transformations/      # Sample transformation and calculation logic
+│   └── final/                # Sanitized consumption-ready SQL examples
 │
-├── visuals/                  # Exported charts, dashboard screenshots, ERD diagrams
+├── reports/                  # Sanitized project documentation or report samples
 │
-├── docs/                     # Data dictionaries, schema notes, reference material
+├── visuals/
+│   ├── solution-architecture.png
+│   ├── data-workflow.png
+│   └── dashboard-concept.png
 │
-└── README.md                 # You are here
+├── docs/
+│   ├── business-requirements.md
+│   ├── kpi-definitions.md
+│   └── data-model.md
+│
+└── README.md                 # Main project documentation
+```
+
+> **Note:** Only sanitized and recreated examples are included in this repository. No proprietary company data, production SQL, confidential screenshots, credentials, or internal system information are published. Sample datasets, SQL logic, diagrams, and dashboard concepts are generalized to demonstrate the solution design and technical approach without exposing confidential information.
+
 ```
 
 > ⚠️ *Delete folders you didn't use. An empty folder is worse than no folder.*
