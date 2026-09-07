@@ -407,69 +407,71 @@ This allows users to move from overall cost-per-tonne performance into individua
 
 ### Option A - Embedded Image
 ![ERD Diagram](visuals/erd.png)
-*[Brief caption: e.g., "Three-table schema - orders, customers, and products joined on shared IDs."]*
-
 ---
 
 ### Option B - dbdiagram.io Schema Definition
 ```
-Table orders {
-  order_id    int     [pk]
-  customer_id int     [ref: > customers.customer_id]
-  product_id  int     [ref: > products.product_id]
-  order_date  date
-  amount      float
+Table dim_date {
+  date_id       int     [pk]
+  fiscal_year   int
+  fiscal_month  int
+  month_name    string
 }
 
-Table customers {
-  customer_id int  [pk]
-  region_code string
-  signup_date date
+Table dim_department {
+  department_id    int     [pk]
+  department_name  string
 }
 
-Table products {
-  product_id   int    [pk]
-  category     string
-  unit_price   float
+Table dim_cost_center {
+  cost_center_id    int     [pk]
+  department_id     int     [ref: > dim_department.department_id]
+  cost_center_name  string
+}
+
+Table dim_cost_element {
+  cost_element_id    int     [pk]
+  cost_element_name  string
+  cost_element_type  string
+}
+
+Table actual_cost {
+  date_id          int    [ref: > dim_date.date_id]
+  department_id    int    [ref: > dim_department.department_id]
+  cost_center_id   int    [ref: > dim_cost_center.cost_center_id]
+  cost_element_id  int    [ref: > dim_cost_element.cost_element_id]
+  actual_cost      float
+}
+
+Table budget_cost {
+  date_id          int    [ref: > dim_date.date_id]
+  department_id    int    [ref: > dim_department.department_id]
+  cost_center_id   int    [ref: > dim_cost_center.cost_center_id]
+  cost_element_id  int    [ref: > dim_cost_element.cost_element_id]
+  budget_cost      float
+}
+
+Table forecast_cost {
+  date_id          int    [ref: > dim_date.date_id]
+  department_id    int    [ref: > dim_department.department_id]
+  cost_center_id   int    [ref: > dim_cost_center.cost_center_id]
+  cost_element_id  int    [ref: > dim_cost_element.cost_element_id]
+  forecast_cost    float
+}
+
+Table operational_volume {
+  date_id                     int    [ref: > dim_date.date_id]
+  actual_production_volume    float
+  budget_production_volume    float
+  forecast_production_volume  float
+  actual_shipped_volume       float
+  budget_shipped_volume       float
+  forecast_shipped_volume     float
 }
 ```
 *Paste this into [dbdiagram.io](https://dbdiagram.io) to view the visual.*
 
 ---
-
-### Option C - Mermaid Diagram *(renders on GitHub)*
-```mermaid
-erDiagram
-    ORDERS {
-        int order_id PK
-        int customer_id FK
-        int product_id FK
-        date order_date
-        float amount
-    }
-    CUSTOMERS {
-        int customer_id PK
-        string region_code
-        date signup_date
-    }
-    PRODUCTS {
-        int product_id PK
-        string category
-        float unit_price
-    }
-    ORDERS ||--o{ CUSTOMERS : "placed by"
-    ORDERS ||--o{ PRODUCTS : "contains"
-```
-
----
-
-**Table Relationships Summary:**
-
-| Relationship | Join Key | Type |
-|-------------|----------|------|
-| `orders` → `customers` | `customer_id` | Many-to-One |
-| `orders` → `products` | `product_id` | Many-to-One |
-| [Add rows as needed] | | |
 
 ---
 
