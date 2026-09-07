@@ -6,14 +6,16 @@
 ## ⚙️ Project Type Flags
 > *Check what applies. This helps reviewers and collaborators understand the nature of the work at a glance. Delete this block before publishing.*
 
-- [ ] Exploratory Data Analysis (EDA)
-- [ ] SQL Analysis / Querying
-- [ ] Dashboard / Data Visualization
-- [ ] Data Pipeline / ETL
-- [ ] Predictive Modelling / Machine Learning
-- [ ] Data Cleaning / Wrangling
-- [ ] End-to-End (multiple of the above)
-- [ ] Other: ___________
+- [x] Exploratory Data Analysis (EDA)
+- [x] Data Integration
+- [x] SQL Analysis / Querying
+- [x] Data Pipeline / ETL
+- [x] Data Flow/Task chain
+- [x] Local Table
+- [x] Data Cleaning / Wrangling
+- [x] Dashboard / Data Visualization
+- [x] End-to-End (multiple of the above)
+
 
 ---
 
