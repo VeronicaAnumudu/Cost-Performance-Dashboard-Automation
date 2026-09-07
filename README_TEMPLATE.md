@@ -617,32 +617,32 @@ This moved the reporting experience from a static Excel output toward an interac
   ❌ "Further analysis is needed."
      (This is a placeholder, not a recommendation.)
 -->
-10. Recommendations & Business Impact
+
 
 The project demonstrated the value of moving recurring enterprise reporting processes away from manually maintained spreadsheets toward governed and reusable analytics solutions.
 
-Business Impact
-Improved Accuracy
+**Business Impact**
+**Improved Accuracy**
 
 Automated integration, transformation, and calculation processes reduced dependency on manual Excel manipulation and lowered the opportunity for preparation and calculation errors.
 
-Reduced Manual Effort
+**Reduced Manual Effort**
 
 Activities previously required to extract, combine, calculate, validate, format, and distribute reports were incorporated into a reusable analytics process.
 
-Timely Reporting
+**Timely Reporting**
 
 Automated data processing improved access to current cost and operational performance information.
 
-Deeper Cost Analysis
+**Deeper Cost Analysis**
 
 Hierarchical analysis enabled users to move directly from high-level performance indicators into the cost centers and cost elements driving variances.
 
-Self-Service Analytics
+**Self-Service Analytics**
 
 Business users could filter, drill, change analytical perspectives, and investigate performance without requiring a new Excel report for every analytical question.
 
-Scalability
+**Scalability**
 
 The layered SAP Datasphere architecture created a foundation for additional datasets, KPIs, reporting requirements, and future dashboard enhancements.
 ---
