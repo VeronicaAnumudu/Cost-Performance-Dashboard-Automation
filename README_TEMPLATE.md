@@ -1,4 +1,4 @@
-# [Project Title]
+# Cost Performance Dashboard Automation
 > *One sentence. What did you analyze, build, or solve - and why does it matter?*
 
 ---
@@ -38,18 +38,14 @@
 ## 1. Project Overview
 
 <!--
-  Write 3–5 sentences in plain language.
-  Cover: context → problem → approach → outcome.
-  Read it out loud. If it sounds like a form - rewrite it.
+ ## Project Overview
 
-  WHAT GOOD LOOKS LIKE:
-  "A mid-size retail business was seeing inconsistent revenue across
-  its regional stores but couldn't identify the root cause. This project
-  explored 18 months of transaction data across five regions to determine
-  whether underperformance was driven by sales volume, pricing, or return
-  rates. The analysis revealed that one region's gap was almost entirely
-  explained by an unusually high return rate on a single product category -
-  a finding invisible in the company's top-level reporting."
+The Controlling team relied on a manually prepared Excel dashboard to monitor cost performance, requiring data to be extracted from SAP, combined with budget and forecast data maintained in Excel, validated, reconciled, formatted, and distributed each reporting cycle. As reporting requirements grew, the process became increasingly time-consuming, difficult to scale, and limited the level of analysis available to business users.
+
+I redesigned the reporting process as an integrated analytics solution using SAP ECC, SAP BW, SAP Datasphere, and SAP Analytics Cloud (SAC). SAP data was integrated through Datasphere, while dedicated local tables were created to allow Budget and Forecast data from Excel to be uploaded when required and incorporated into the reporting model.
+
+The resulting solution gave the Controlling team, business managers, and cost owners a consolidated view of actual spend, budget, forecast, production and shipped volumes, cost per production tonne, cost per shipped tonne, monthly and YTD performance, variances, and prior-year performance. Interactive hierarchies also enabled users to drill down across **Department → Cost Center → Cost Element** to understand which areas and cost components were driving overall **cost per tonne** and investigate performance at a more detailed level.
+"
 
   WHAT TO AVOID:
   "This project analyzes sales data to find trends and insights."
