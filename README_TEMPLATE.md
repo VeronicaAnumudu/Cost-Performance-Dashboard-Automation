@@ -75,11 +75,16 @@ I redesigned the process as an integrated analytics solution using SAP ECC, SAP 
   ❌ "Understand trends."
   (These can't fail - which means they can't succeed either.)
 -->
+## 2. Objectives
 
-- **Primary Objective:** [The main thing you set out to do]
-- **Secondary Objective 1:** [Supporting goal]
-- **Secondary Objective 2:** [Supporting goal]
-- **Secondary Objective 3:** [Remove if not applicable]
+* Build an automated cost performance analytics solution to replace the manually prepared Excel dashboard and reduce repetitive data preparation, validation, and reporting effort.
+
+* Integrate Actual, Budget, Forecast, production, and shipped-volume data into a consolidated reporting model to improve the accuracy, consistency, and timeliness of cost reporting.
+
+* Enable interactive analysis and drill-down across **Department → Cost Center → Cost Element** to help users identify and understand the drivers of cost per tonne.
+
+* Build a scalable and maintainable reporting process that supports evolving business requirements, reduces dependence on manual Excel reporting, and frees the Controlling team for higher-value analysis.
+
 
 > 💡 *Every analysis decision in this project traces back to one of these objectives.*
 
