@@ -478,42 +478,59 @@ Table operational_volume {
 ## 8. Analysis & Metrics
 
 <!--
-  Explain what you measured and how - before you share what you found.
+# 8. Analysis & Metrics
 
-  WHAT GOOD LOOKS LIKE:
-  Metric: "Customer Return Rate"
-  Definition: "Number of transactions flagged as returns divided by total
-               transactions, calculated at product-category and regional grain."
-  Why It Matters: "Return rate - not sales volume - was hypothesised to
-                  explain regional revenue gaps. This metric tests that hypothesis."
+## Analytical Approach
 
-  WHAT TO AVOID:
-  ❌ Defining a metric only in code: SUM(returns) / COUNT(transaction_id)
-     That's an implementation. Write the plain-language definition here.
-     Both belong in your project - the definition in the README,
-     the implementation in the code.
--->
-
-### Analytical Approach
-
-[Describe how you approached the analysis. Were you exploring patterns? Testing a hypothesis? Building and validating a pipeline? Be honest about your method - exploratory work is valid, just call it that.]
+The analytical approach focused on building and validating an integrated cost-performance reporting model that connects financial results with operational activity. Actual, Budget, and Forecast cost data were aligned with corresponding production and shipped-volume measures to evaluate performance on both a total-cost and cost-per-tonne basis. Monthly, YTD, variance, and prior-year comparisons were incorporated to help users identify performance gaps and investigate the underlying cost drivers. Hierarchical analysis through **Department → Cost Center → Cost Element** allowed users to move from overall performance into increasingly detailed levels of cost analysis.
 
 ### Key Metrics Defined
 
-| Metric | Plain-Language Definition | Why It Matters |
-|--------|--------------------------|----------------|
-| `[Metric 1]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 2]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 3]` | [What it measures, in one sentence] | [What decision or question it answers] |
+| Metric                        | Plain-Language Definition                                                     | Why It Matters                                                                                             |
+| ----------------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **Actual Spend**              | Total cost incurred during the selected reporting period.                     | Shows how much has actually been spent.                                                                    |
+| **Actual vs Budget**          | Compares actual cost with the approved budget.                                | Identifies areas that are over or under budget.                                                            |
+| **Actual vs Forecast**        | Compares actual cost with the latest forecast.                                | Shows whether current performance is tracking against expectations.                                        |
+| **Forecast vs Budget**        | Compares forecasted cost with the approved budget.                            | Highlights expected year-end pressure or savings against budget.                                           |
+| **Actual vs Prior Year**      | Compares current cost performance with the corresponding prior-year period.   | Provides historical context and helps identify changes in cost performance.                                |
+| **Production Tonnes**         | Actual, Budget, and Forecast production volumes for the reporting period.     | Provides the operational basis for evaluating production-related unit costs.                               |
+| **Shipped Tonnes**            | Actual, Budget, and Forecast shipped volumes for the reporting period.        | Provides the operational basis for evaluating shipping-related unit costs.                                 |
+| **Cost per Production Tonne** | Total applicable cost divided by production tonnes.                           | Shows the cost required to produce each tonne and connects financial performance with production activity. |
+| **Cost per Shipped Tonne**    | Total applicable cost divided by shipped tonnes.                              | Shows cost relative to the volume of product shipped.                                                      |
+| **YTD Cost per Tonne**        | Cumulative applicable cost divided by cumulative tonnes for the year to date. | Shows unit-cost performance over the year rather than for an individual month.                             |
+| **Actuals-to-Forecast %**     | Actual performance expressed as a percentage of forecast performance.         | Helps users assess progress against forecast expectations.                                                 |
+
+### Cost-per-Tonne Logic
+
+```text
+Cost per Production Tonne
+        =
+Total Applicable Cost
+        ÷
+Production Tonnes
+```
+
+```text
+Cost per Shipped Tonne
+        =
+Total Applicable Cost
+        ÷
+Shipped Tonnes
+```
+
+Actual, Budget, and Forecast cost-per-tonne measures were calculated using their corresponding cost and operational-volume values to provide like-for-like performance comparisons.
 
 ### Methods Used
 
-- [e.g., Descriptive statistics - distribution, central tendency, outlier detection]
-- [e.g., Trend analysis across [time period]]
-- [e.g., Segmentation / group comparison by [dimension]]
-- [e.g., Correlation analysis between [variable A] and [variable B]]
-- [e.g., SQL window functions for [specific aggregation]]
-- [e.g., Custom aggregation or transformation logic in [tool]]
+* **Data integration** — combined Actual, Budget, Forecast, production-volume, and shipped-volume data into a unified analytical model.
+* **SQL transformation and aggregation** — applied business rules, calculations, filtering, aggregation, and reporting logic within SAP Datasphere.
+* **Variance analysis** — compared Actual vs Budget, Actual vs Forecast, and Forecast vs Budget performance.
+* **Trend analysis** — evaluated monthly, YTD, and prior-year cost-performance patterns.
+* **Unit-cost analysis** — connected financial cost with operational volumes through cost-per-production-tonne and cost-per-shipped-tonne calculations.
+* **Hierarchical analysis** — enabled drill-down through **Department → Cost Center → Cost Element** to identify underlying cost drivers.
+* **Business-rule application** — applied reporting rules for Actual and Forecast periods and other period-dependent calculations.
+* **Data validation and reconciliation** — validated transformed results against source data and existing financial reporting before business acceptance.
+
 
 ---
 
