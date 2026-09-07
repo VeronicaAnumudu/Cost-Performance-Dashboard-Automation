@@ -235,15 +235,15 @@ Data preparation included:
 
 ### Step 5 — Consumption Space
 
-The transformed data was organized into **consumption-ready analytical models** for reporting.
+The transformed data was organized into consumption-ready analytical models for reporting.
 
 This created a controlled reporting layer between the underlying transformation logic and SAP Analytics Cloud while supporting the required organizational and cost hierarchies.
 
 ### Step 6 — SAP Analytics Cloud
 
-The final analytical models were consumed in **SAP Analytics Cloud (SAC)**, where the Cost Performance Dashboard provided interactive analysis of Actual, Budget, Forecast, variances, production and shipped volumes, and cost-per-tonne performance.
+The final analytical models were consumed in SAP Analytics Cloud (SAC), where the Cost Performance Dashboard provided interactive analysis of Actual, Budget, Forecast, variances, production and shipped volumes, and cost-per-tonne performance.
 
-Users could drill through **Department → Cost Center → Cost Element** to investigate the underlying drivers of cost per tonne.
+Users could drill through Department → Cost Center → Cost Element and their groups to investigate the underlying drivers of cost per tonne.
 
 -->
 
