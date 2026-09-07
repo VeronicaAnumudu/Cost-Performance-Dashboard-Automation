@@ -38,8 +38,6 @@
 ## 1. Project Overview
 
 <!--
- ## Project Overview
-
 The Controlling team relied on a manually prepared Excel dashboard to monitor cost performance, requiring data to be extracted from SAP, combined with budget and forecast data maintained in Excel, validated, reconciled, formatted, and distributed each reporting cycle. As reporting requirements grew, the process became increasingly time-consuming, difficult to scale, and limited the level of analysis available to business users.
 
 I redesigned the reporting process as an integrated analytics solution using SAP ECC, SAP BW, SAP Datasphere, and SAP Analytics Cloud (SAC). SAP data was integrated through Datasphere, while dedicated local tables were created to allow Budget and Forecast data from Excel to be uploaded when required and incorporated into the reporting model.
