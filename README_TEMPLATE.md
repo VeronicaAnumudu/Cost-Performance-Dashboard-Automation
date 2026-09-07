@@ -52,7 +52,7 @@ The resulting solution gave the Controlling team, business managers, and cost ow
   (Too vague. Could describe 10,000 projects. Describes none of them.)
 -->
 
-**Context:** [The business, research, or personal situation that motivated this project.]
+**Context:** The Controlling team relied on a manually prepared Excel dashboard to monitor cost performance, requiring data to be extracted from SAP, combined with budget and forecast data maintained in Excel, validated, reconciled, formatted, and distributed each reporting cycle. As reporting requirements grew, the process became increasingly time-consuming, difficult to scale, and limited the level of analysis available to business users.
 
 **Problem Statement:** [The specific question or challenge you were addressing.]
 
