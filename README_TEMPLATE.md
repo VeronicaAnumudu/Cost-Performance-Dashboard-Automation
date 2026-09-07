@@ -663,19 +663,21 @@ The layered SAP Datasphere architecture created a foundation for additional data
      Every project has limitations. Documenting them is a sign of
      analytical maturity - not a confession of failure.
 -->
+This public portfolio case study intentionally excludes confidential and proprietary information.
 
-### Assumptions
-- [What did you treat as true without being able to verify?]
-- [What simplifications did you make for scope or feasibility?]
-- [What domain rules or definitions did you accept as given?]
+The following have not been published:
 
-### Limitations
-- [What gaps exist in the data?]
-- [What analysis was out of scope but could affect interpretation?]
-- [What would a more rigorous version of this project include?]
-- [Are there known biases in the data source or collection method?]
+Company-specific financial figures
+Actual production volumes
+Proprietary data structures
+Internal source-system identifiers
+Production SQL code
+Commercially sensitive information
+Confidential dashboard screenshots
 
-> *The goal here is pre-emptive Q&A. What would a thoughtful skeptic push back on? Document the answer here, before they ask.*
+The portfolio therefore focuses on the business problem, architecture, data engineering approach, analytical methodology, technical implementation, responsibilities, and business value rather than confidential business data.
+
+Any dashboard images included in the public repository should therefore use illustrative or anonymized values rather than actual company data.
 
 ---
 
