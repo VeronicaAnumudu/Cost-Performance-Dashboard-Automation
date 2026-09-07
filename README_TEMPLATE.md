@@ -142,11 +142,6 @@ I redesigned the process as an integrated analytics solution using SAP ECC, SAP 
 │   ├── raw/                  # Original, unmodified source data - never edited
 │   ├── processed/            # Cleaned and transformed data
 │   └── external/             # Reference data, lookup tables, third-party files
-│
-├── notebooks/                # Jupyter, R Markdown, or Colab notebooks
-│
-├── scripts/                  # Reusable .py, .R, or .sh processing files
-│
 ├── queries/                  # SQL files (retain this folder for SQL-heavy projects)
 │   ├── exploratory/          # Ad-hoc or investigative queries
 │   ├── transformations/      # Cleaning and reshaping logic
@@ -158,7 +153,6 @@ I redesigned the process as an integrated analytics solution using SAP ECC, SAP 
 │
 ├── docs/                     # Data dictionaries, schema notes, reference material
 │
-├── project_metadata.yml      # Machine-readable metadata (optional)
 └── README.md                 # You are here
 ```
 
