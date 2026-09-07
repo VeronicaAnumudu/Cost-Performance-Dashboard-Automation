@@ -138,7 +138,6 @@ I redesigned the process as an integrated analytics solution using SAP ECC, SAP 
 ```
 ## 4. Repository Structure
 
-```text id="4rt6v7"
 Cost-Performance-Dashboard/
 │
 ├── data/
