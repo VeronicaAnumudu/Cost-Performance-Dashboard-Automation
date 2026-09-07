@@ -532,21 +532,37 @@ Actual, Budget, and Forecast cost-per-tonne measures were calculated using their
 ## 9. Key Insights
 
 <!--
-  Findings + implications. Not just what happened - what it means.
+The redesigned analytical environment enabled business users to answer increasingly detailed performance questions.
 
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Return rates, not sales volume, explain Region A's underperformance.
-      Region A's return rate on home goods was 34% - more than double the
-      company average. Revenue was not lost at the point of sale; it was
-      lost post-sale through refunds. This points to a fulfilment or
-      product quality issue specific to that region, not a demand problem."
+Cost Performance
 
-  WHAT TO AVOID:
-  ❌ "Region A had lower revenue than other regions in Q4."
-     (That's an observation. It describes what happened.
-      An insight says what it means and where to look next.)
+Users could identify areas where Actual costs differed from Budget, Forecast, or Prior-Year performance.
 
-  Aim for 3–6 insights. Quality over quantity.
+Cost Drivers
+
+Rather than stopping at a high-level variance, users could drill from:
+
+Department → Cost Center → Cost Element
+
+to identify the underlying drivers of cost performance.
+
+Financial + Operational Performance
+
+Integrating cost information with Production and Shipped Volumes enabled the business to evaluate costs relative to operational output rather than looking at expenditure in isolation.
+
+Interactive Analysis
+
+Users gained the ability to:
+
+Filter performance dynamically
+Navigate organizational hierarchies
+Compare Actual vs Budget
+Compare Actual vs Forecast
+Compare against Prior Year
+Analyze monthly and YTD results
+Investigate performance from multiple analytical perspectives
+
+This moved the reporting experience from a static Excel output toward an interactive decision-support environment.
 -->
 
 **Insight 1: [Short descriptive headline]**
