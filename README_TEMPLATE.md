@@ -564,19 +564,37 @@ Investigate performance from multiple analytical perspectives
 
 This moved the reporting experience from a static Excel output toward an interactive decision-support environment.
 -->
+The redesigned analytical environment enabled business users to answer increasingly detailed performance questions.
 
-**Insight 1: [Short descriptive headline]**
-[What you found + what it suggests. One short paragraph.]
+Cost Performance
 
-**Insight 2: [Short descriptive headline]**
-[What you found + what it suggests.]
+Users could identify areas where Actual costs differed from Budget, Forecast, or Prior-Year performance.
 
-**Insight 3: [Short descriptive headline]**
-[What you found + what it suggests.]
+Cost Drivers
 
-**Insight 4 (if applicable): [Short descriptive headline]**
-[What you found + what it suggests.]
+Rather than stopping at a high-level variance, users could drill from:
 
+Department → Cost Center → Cost Element
+
+to identify the underlying drivers of cost performance.
+
+Financial + Operational Performance
+
+Integrating cost information with Production and Shipped Volumes enabled the business to evaluate costs relative to operational output rather than looking at expenditure in isolation.
+
+Interactive Analysis
+
+Users gained the ability to:
+
+Filter performance dynamically
+Navigate organizational hierarchies
+Compare Actual vs Budget
+Compare Actual vs Forecast
+Compare against Prior Year
+Analyze monthly and YTD results
+Investigate performance from multiple analytical perspectives
+
+This moved the reporting experience from a static Excel output toward an interactive decision-support environment.
 ---
 
 ## 10. Recommendations
