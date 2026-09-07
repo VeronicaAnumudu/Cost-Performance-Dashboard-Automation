@@ -290,20 +290,94 @@ Users could drill through Department → Cost Center → Cost Element and their 
   📌 FOR NON-SQL PROJECTS: Describe the shape of your dataset informally
      if a formal schema doesn't apply. Even one paragraph is more helpful than nothing.
 -->
+# 6. Data Model & Schema
 
-### Dataset / Table: `[name]`
+The analytical model combines financial and operational data to support cost-performance analysis. The table and field names below are **sanitized examples** representing the structure of the solution and do not expose production SAP objects or proprietary data.
 
-| Field Name | Data Type | Description | Example Value |
-|------------|-----------|-------------|---------------|
-| `[field_1]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_2]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_3]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
+### Dataset / Table: `Actual_Cost`
 
-> **Row count (approx.):** [X rows]
-> **Date range:** [Start] – [End]
-> **Key join / relationship:** [e.g., `orders.customer_id` → `customers.id`]
+| Field Name     | Data Type | Description                                        | Example Value |
+| -------------- | --------- | -------------------------------------------------- | ------------- |
+| `Fiscal_Year`  | Integer   | Fiscal year associated with the cost               | 2026          |
+| `Fiscal_Month` | Integer   | Fiscal reporting month                             | 6             |
+| `Department`   | String    | Organizational department responsible for the cost | Operations    |
+| `Cost_Center`  | String    | Cost center to which the expense is assigned       | CC_1001       |
+| `Cost_Element` | String    | Category of cost incurred                          | Maintenance   |
+| `Actual_Cost`  | Decimal   | Actual cost recorded for the reporting period      | 125,000.00    |
 
-*Add additional table blocks as needed for multi-table projects.*
+### Dataset / Table: `Budget_Cost`
+
+| Field Name     | Data Type | Description                                 | Example Value |
+| -------------- | --------- | ------------------------------------------- | ------------- |
+| `Fiscal_Year`  | Integer   | Budget fiscal year                          | 2026          |
+| `Fiscal_Month` | Integer   | Budget reporting month                      | 6             |
+| `Department`   | String    | Department associated with the budget       | Operations    |
+| `Cost_Center`  | String    | Cost center receiving the budget allocation | CC_1001       |
+| `Cost_Element` | String    | Cost category associated with the budget    | Maintenance   |
+| `Budget_Cost`  | Decimal   | Budgeted cost for the reporting period      | 120,000.00    |
+
+### Dataset / Table: `Forecast_Cost`
+
+| Field Name      | Data Type | Description                                | Example Value |
+| --------------- | --------- | ------------------------------------------ | ------------- |
+| `Fiscal_Year`   | Integer   | Forecast fiscal year                       | 2026          |
+| `Fiscal_Month`  | Integer   | Forecast reporting month                   | 6             |
+| `Department`    | String    | Department associated with the forecast    | Operations    |
+| `Cost_Center`   | String    | Cost center associated with the forecast   | CC_1001       |
+| `Cost_Element`  | String    | Cost category associated with the forecast | Maintenance   |
+| `Forecast_Cost` | Decimal   | Forecast cost for the reporting period     | 128,000.00    |
+
+### Dataset / Table: `Operational_Volume`
+
+| Field Name                   | Data Type | Description                                      | Example Value |
+| ---------------------------- | --------- | ------------------------------------------------ | ------------- |
+| `Fiscal_Year`                | Integer   | Fiscal year associated with operational activity | 2026          |
+| `Fiscal_Month`               | Integer   | Fiscal reporting month                           | 6             |
+| `Actual_Production_Volume`   | Decimal   | Actual production volume for the period          | 85,000        |
+| `Budget_Production_Volume`   | Decimal   | Budgeted production volume for the period        | 88,000        |
+| `Forecast_Production_Volume` | Decimal   | Forecast production volume for the period        | 86,500        |
+| `Actual_Shipped_Volume`      | Decimal   | Actual shipped volume for the period             | 82,500        |
+| `Budget_Shipped_Volume`      | Decimal   | Budgeted shipped volume for the period           | 84,000        |
+| `Forecast_Shipped_Volume`    | Decimal   | Forecast shipped volume for the period           | 83,500        |
+
+### Dataset / Table: `Cost_Performance`
+
+| Field Name                   | Data Type | Description                                         | Example Value |
+| ---------------------------- | --------- | --------------------------------------------------- | ------------- |
+| `Fiscal_Year`                | Integer   | Fiscal reporting year                               | 2026          |
+| `Fiscal_Month`               | Integer   | Fiscal reporting month                              | 6             |
+| `Department`                 | String    | Organizational department                           | Operations    |
+| `Cost_Center`                | String    | Cost center used for detailed analysis              | CC_1001       |
+| `Cost_Element`               | String    | Cost category used for detailed analysis            | Maintenance   |
+| `Actual_Cost`                | Decimal   | Actual cost for the reporting period                | 125,000.00    |
+| `Budget_Cost`                | Decimal   | Budgeted cost for the reporting period              | 120,000.00    |
+| `Forecast_Cost`              | Decimal   | Forecast cost for the reporting period              | 128,000.00    |
+| `Actual_Production_Volume`   | Decimal   | Actual production volume                            | 85,000        |
+| `Budget_Production_Volume`   | Decimal   | Budgeted production volume                          | 88,000        |
+| `Forecast_Production_Volume` | Decimal   | Forecast production volume                          | 86,500        |
+| `Actual_Shipped_Volume`      | Decimal   | Actual shipped volume                               | 82,500        |
+| `Budget_Shipped_Volume`      | Decimal   | Budgeted shipped volume                             | 84,000        |
+| `Forecast_Shipped_Volume`    | Decimal   | Forecast shipped volume                             | 83,500        |
+| `Actual_Cost_Per_Tonne`      | Decimal   | Actual cost divided by actual production volume     | 1.47          |
+| `Budget_Cost_Per_Tonne`      | Decimal   | Budget cost divided by budget production volume     | 1.36          |
+| `Forecast_Cost_Per_Tonne`    | Decimal   | Forecast cost divided by forecast production volume | 1.48          |
+| `Budget_Variance`            | Decimal   | Difference between Actual and Budget cost           | 5,000.00      |
+| `Forecast_Variance`          | Decimal   | Difference between Actual and Forecast cost         | -3,000.00     |
+
+### Data Relationships
+
+The model integrates **Actual, Budget, and Forecast cost data** with corresponding **Actual, Budget, and Forecast operational volumes**. Common reporting dimensions such as Fiscal Year, Fiscal Month, Department, Cost Center, and Cost Element are used to align the datasets for cost-performance analysis.
+
+This structure enables Actual, Budget, and Forecast cost-per-tonne calculations using the corresponding operational volumes, rather than comparing costs without considering changes in production activity.
+
+The organizational hierarchy supports drill-down through:
+
+**Department → Cost Center → Cost Element**
+
+This allows users to move from overall cost-per-tonne performance into individual departments, cost centers, and cost elements to identify the underlying drivers of performance.
+
+> **Note:** Dataset names, field names, structures, and example values shown above are sanitized and generalized for portfolio purposes. They do not represent production table names, confidential company data, or proprietary SAP objects.
+
 
 ---
 
