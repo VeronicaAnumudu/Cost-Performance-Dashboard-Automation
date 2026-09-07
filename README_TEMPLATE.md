@@ -477,10 +477,6 @@ Table operational_volume {
 
 ## 8. Analysis & Metrics
 
-<!--
-# 8. Analysis & Metrics
-
-## Analytical Approach
 
 The analytical approach focused on building and validating an integrated cost-performance reporting model that connects financial results with operational activity. Actual, Budget, and Forecast cost data were aligned with corresponding production and shipped-volume measures to evaluate performance on both a total-cost and cost-per-tonne basis. Monthly, YTD, variance, and prior-year comparisons were incorporated to help users identify performance gaps and investigate the underlying cost drivers. Hierarchical analysis through **Department → Cost Center → Cost Element** allowed users to move from overall performance into increasingly detailed levels of cost analysis.
 
@@ -530,7 +526,6 @@ Actual, Budget, and Forecast cost-per-tonne measures were calculated using their
 * **Hierarchical analysis** — enabled drill-down through **Department → Cost Center → Cost Element** to identify underlying cost drivers.
 * **Business-rule application** — applied reporting rules for Actual and Forecast periods and other period-dependent calculations.
 * **Data validation and reconciliation** — validated transformed results against source data and existing financial reporting before business acceptance.
-
 
 ---
 
