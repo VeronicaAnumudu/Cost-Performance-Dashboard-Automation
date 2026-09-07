@@ -75,7 +75,7 @@ I redesigned the process as an integrated analytics solution using SAP ECC, SAP 
   ❌ "Understand trends."
   (These can't fail - which means they can't succeed either.)
 -->
-## 2. Objectives
+
 
 * Build an automated cost performance analytics solution to replace the manually prepared Excel dashboard and reduce repetitive data preparation, validation, and reporting effort.
 
@@ -86,7 +86,7 @@ I redesigned the process as an integrated analytics solution using SAP ECC, SAP 
 * Build a scalable and maintainable reporting process that supports evolving business requirements, reduces dependence on manual Excel reporting, and frees the Controlling team for higher-value analysis.
 
 
-> 💡 *Every analysis decision in this project traces back to one of these objectives.*
+
 
 ---
 
