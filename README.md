@@ -498,23 +498,7 @@ The analytical approach focused on building and validating an integrated cost-pe
 | **YTD Cost per Tonne**        | Cumulative applicable cost divided by cumulative tonnes for the year to date. | Shows unit-cost performance over the year rather than for an individual month.                             |
 | **Actuals-to-Forecast %**     | Actual performance expressed as a percentage of forecast performance.         | Helps users assess progress against forecast expectations.                                                 |
 
-### Cost-per-Tonne Logic
 
-```text
-Cost per Production Tonne
-        =
-Total Applicable Cost
-        ÷
-Production Tonnes
-```
-
-```text
-Cost per Shipped Tonne
-        =
-Total Applicable Cost
-        ÷
-Shipped Tonnes
-```
 
 Actual, Budget, and Forecast cost-per-tonne measures were calculated using their corresponding cost and operational-volume values to provide like-for-like performance comparisons.
 
