@@ -177,25 +177,84 @@ Cost-Performance-Dashboard/
 ## 5. Data Workflow
 
 <!--
-  Show how data moved through your project - from source to output.
-  Every transformation decision should be traceable here.
+# 5. Data Workflow
 
-  WHAT GOOD LOOKS LIKE:
-  1. Source: "Monthly CSV exports pulled from the internal POS system.
-              Five files, one per region, covering Jan 2023–Jun 2024."
-  2. Ingestion: "Loaded into Python using pandas. Files concatenated into
-                 a single dataframe (approx. 340,000 rows)."
-  3. Cleaning: "Removed 1.2% of rows with null transaction IDs.
-                Standardised date formats across regional files.
-                Resolved product category naming inconsistencies (3 variants → 1)."
-  4. Transformation: "Created a returns_rate field at product-category level.
-                      Aggregated to weekly and regional grain for trend analysis."
-  5. Analysis: "Descriptive statistics, regional comparison, return rate
-                segmentation by product category."
-  6. Output: "Summary report (PDF), annotated notebook, processed CSV."
+## End-to-End Architecture
 
-  WHAT TO AVOID:
-  ❌ "Data was cleaned and analysed." (No chain. No decisions. No trust.)
+```text
+SAP ECC
+   ↓
+SAP BW
+   ↓
+SAP Datasphere
+   │
+   ├── Inbound Space
+   │       │
+   │       ↓
+   │   Transformation Space ← Local Tables ← Budget & Forecast Excel Uploads
+   │       │
+   │       ↓
+   └── Consumption Space
+           ↓
+SAP Analytics Cloud (SAC)
+           ↓
+Cost Performance Dashboard
+```
+
+The solution followed an end-to-end architecture of:
+
+**SAP ECC → SAP BW → SAP Datasphere → SAP Analytics Cloud (SAC)**
+
+Within SAP Datasphere, SAP source data moved through:
+
+**Inbound Space → Transformation Space → Consumption Space → SAC**
+
+Budget and Forecast data followed a separate controlled input path:
+
+**Excel → Local Tables → Transformation Space**
+
+### Step 1 — Source Systems
+
+Financial and operational data originating from **SAP ECC** was made available through the existing **SAP BW** environment. Budget and Forecast data maintained in Excel served as an additional input to the cost performance model.
+
+### Step 2 — Inbound Space
+
+SAP BW data was remotely accessed through the **SAP Datasphere Inbound Space**, providing the source layer for downstream processing.
+
+This separated source connectivity from transformation and reporting logic.
+
+### Step 3 — Local Tables
+
+Dedicated **Local Tables** were created in SAP Datasphere to provide a controlled location for Budget and Forecast data maintained in Excel.
+
+Updated Budget and Forecast files could be uploaded to these tables when required, allowing externally maintained planning data to be incorporated into the same analytical model as SAP Actual data.
+
+### Step 4 — Transformation Space
+
+The **Transformation Space** served as the main data-processing and integration layer, where SAP data from the Inbound Space was transformed and integrated with Budget and Forecast data from the Local Tables.
+
+Data preparation included:
+
+* Data Flows
+* Data Pipelines
+* SQL transformations
+* Business rules and calculations
+* Filtering and aggregation
+* Financial and operational data integration
+* Data-modeling logic
+
+### Step 5 — Consumption Space
+
+The transformed data was organized into **consumption-ready analytical models** for reporting.
+
+This created a controlled reporting layer between the underlying transformation logic and SAP Analytics Cloud while supporting the required organizational and cost hierarchies.
+
+### Step 6 — SAP Analytics Cloud
+
+The final analytical models were consumed in **SAP Analytics Cloud (SAC)**, where the Cost Performance Dashboard provided interactive analysis of Actual, Budget, Forecast, variances, production and shipped volumes, and cost-per-tonne performance.
+
+Users could drill through **Department → Cost Center → Cost Element** to investigate the underlying drivers of cost per tonne.
+
 -->
 
 ```
