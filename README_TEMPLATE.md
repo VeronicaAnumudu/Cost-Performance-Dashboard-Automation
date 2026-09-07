@@ -53,7 +53,7 @@ The resulting solution gave the Controlling team, business managers, and cost ow
 
 The Controlling team relied on a manually prepared Excel dashboard to monitor cost performance, requiring data to be extracted from SAP, combined with Budget and Forecast data maintained in Excel, validated, reconciled, formatted, and distributed each reporting cycle. As reporting requirements grew, the process became increasingly time-consuming, difficult to scale, and limited the team's ability to analyze the underlying drivers of cost performance.
 
-I redesigned the process as an integrated analytics solution using SAP ECC, SAP BW, SAP Datasphere, and SAP Analytics Cloud (SAC), automating the flow and transformation of SAP data while creating dedicated local tables in Datasphere for Budget and Forecast uploads. The resulting solution provided a consolidated view of actual spend, budget, forecast, production and shipped volumes, cost per tonne, variances, and prior-year performance, with interactive drill-down across **Department → Cost Center → Cost Element** to help users identify and understand the drivers of cost per tonne.
+I redesigned the process as an integrated analytics solution using SAP ECC, SAP BW, SAP Datasphere, and SAP Analytics Cloud (SAC), automating the flow and transformation of SAP data while creating dedicated local tables in Datasphere for Budget and Forecast uploads. The resulting solution provided a consolidated view of actual spend, budget, forecast, production and shipped volumes, cost per tonne, variances, and prior-year performance, with interactive drill-down across Department → Cost Center → Cost Element to help users identify and understand the drivers of cost per tonne.
 
 
 ---
@@ -81,7 +81,7 @@ I redesigned the process as an integrated analytics solution using SAP ECC, SAP 
 
 * Integrate Actual, Budget, Forecast, production, and shipped-volume data into a consolidated reporting model to improve the accuracy, consistency, and timeliness of cost reporting.
 
-* Enable interactive analysis and drill-down across **Department → Cost Center → Cost Element** to help users identify and understand the drivers of cost per tonne.
+* Enable interactive analysis and drill-down across Department → Cost Center → Cost Element to help users identify and understand the drivers of cost per tonne.
 
 * Build a scalable and maintainable reporting process that supports evolving business requirements, reduces dependence on manual Excel reporting, and frees the Controlling team for higher-value analysis.
 
