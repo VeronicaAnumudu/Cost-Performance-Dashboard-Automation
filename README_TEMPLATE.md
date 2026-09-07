@@ -169,14 +169,7 @@ Cost-Performance-Dashboard/
 
 ```
 
-> ⚠️ *Delete folders you didn't use. An empty folder is worse than no folder.*
-> SQL-heavy projects: keep `queries/`. Analysis-only projects: keep `notebooks/`. Both? Keep both.
 
----
-
-## 5. Data Workflow
-
-<!--
 # 5. Data Workflow
 
 ## End-to-End Architecture
