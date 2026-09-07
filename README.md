@@ -1,5 +1,5 @@
 # Cost Performance Dashboard Automation
-> *One sentence. What did you analyze, build, or solve - and why does it matter?*
+> Automated a manual Excel-based cost reporting process into a scalable SAP analytics solution, integrating financial and operational data to improve reporting efficiency, accuracy, and cost-performance analysis.
 
 ---
 
