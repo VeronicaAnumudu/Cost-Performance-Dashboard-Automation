@@ -4,7 +4,7 @@
 ---
 
 ## ⚙️ Project Type Flags
-> *Check what applies. This helps reviewers and collaborators understand the nature of the work at a glance. Delete this block before publishing.*
+
 
 - [x] Exploratory Data Analysis (EDA)
 - [x] Data Integration
